@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/udacity/frontend-nanodegree-mobile-portfolio.git"
   },
+  "scripts": {
+      "start": "node server.js"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
