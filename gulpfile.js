@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var cleanCss = require('gulp-clean-css');
 var minifyjs = require('gulp-js-minify');
+var critical = require('critical').stream;
 
 //Minified CSS in root dir
 gulp.task('minifyRootCss', function() {
@@ -49,12 +50,20 @@ gulp.task('minifyRootJs', function(){
 });
 
 //Minifies JS
-gulp.task('minifyViewsJs', function(){
+gulp.task('moveViewsJs', function(){
   gulp.src('./src/views/js/*.js')
-    .pipe(minifyjs())
     .pipe(gulp.dest('./public/views/js'))
 });
 
+//Generates inline css for above the fold content
+gulp.task('criticalCss', function() {
+    gulp.src('./src/*.html')
+        .pipe(critical({base: 'src/', inline: true, css: ['src/css/style.css']}))
+        .pipe(gulp.dest('./public'))
+})
 
-gulp.task('build', ['moveRootHtml', 'moveViewsHtml','minifyRootCss', 'minifyViewsCss', 'moveRootImages', 'moveViewsImages', 'minifyRootJs', 'minifyViewsJs']);
+
+
+
+gulp.task('build', ['criticalCss', 'moveViewsHtml','minifyRootCss', 'minifyViewsCss', 'moveRootImages', 'moveViewsImages', 'minifyRootJs', 'moveViewsJs']);
 

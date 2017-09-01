@@ -10,8 +10,109 @@
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
     <!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/print.css" rel="stylesheet">
+    <style type="text/css">
+      html {
+        font-size: 100%;
+        overflow-y: scroll;
+      }
+
+      body {
+        margin: 0px;
+        font-size: 14px;
+        line-height: 1.61;
+        font-weight: 400;
+      }
+
+      body {
+        font-family: 'Sedgwick Ave Display', cursive;
+        color: rgb(51, 51, 51);
+      }
+
+      a {
+        color: rgb(17, 34, 204);
+      }
+
+      a:visited {
+        color: rgb(102, 17, 204);
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      img {
+        border: 0px;
+        max-width: 100%;
+      }
+
+      body {
+        background-color: rgb(255, 255, 255);
+        background-position: initial initial;
+        background-repeat: initial initial;
+      }
+
+      header,
+      .container {
+        max-width: 45em;
+        margin: 0px auto;
+      }
+
+      header {
+        padding: 0px 0.5em;
+        color: rgb(201, 11, 11);
+      }
+
+      header img {
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        float: left;
+      }
+
+      header p {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-left: 4em;
+      }
+
+      header p span {
+        font-size: 0.8em;
+        font-weight: normal;
+      }
+
+      .hero {
+        padding: 2em;
+        background-color: rgb(248, 248, 248);
+        font-size: 1.2em;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(204, 204, 204);
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(204, 204, 204);
+      }
+
+      .content {
+        padding: 1em;
+      }
+
+      @media only screen and (max-width: 480px) {
+        body {
+          font-size: 12px;
+        }
+
+        header p {
+          padding-left: 4.5em;
+        }
+      }
+
+    </style>
+    <link href="css/style.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/style.css" rel="stylesheet"></noscript>
+    <link href="css/print.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/print.css" rel="stylesheet"></noscript>
+    <script>!function(e){"use strict";var t=function(t,n,r){function o(e){if(i.body)return e();setTimeout(function(){o(e)})}function a(){d.addEventListener&&d.removeEventListener("load",a),d.media=r||"all"}var l,i=e.document,d=i.createElement("link");if(n)l=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;l=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){l.parentNode.insertBefore(d,n?l:l.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",a),d.onloadcssdefined=f,f(a),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r,r.getAttribute("media")),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){t.poly(),e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);</script>
 
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
@@ -51,5 +152,5 @@
     <footer>
       <p>&copy; Web Performance 2014 <span id="crp-stats"></span></p>
     </footer>
-  </body>
+  </div></body>
 </html>

@@ -1,14 +1,1 @@
-// Measuring the Critical Rendering Path with Navigation Timing
-// https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp
-
-function logCRP() {
-  var t = window.performance.timing,
-    dcl = t.domContentLoadedEventStart - t.domLoading,
-    complete = t.domComplete - t.domLoading;
-  var stats = document.getElementById("crp-stats");
-  stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
-}
-
-window.addEventListener("load", function(event) {
-  logCRP();
-});
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--)d[c.toString(a)]=k[c]||c.toString(a);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3 2(){8 0=4.i.l,7=0.k-0.9,6=0.j-0.9;8 1=f.e("d-1");1.m=\'a: \'+7+\'5, h: \'+6+\'5\'}4.g("c",3(b){2()});',23,23,'t|stats|logCRP|function|window|ms|complete|dcl|var|domLoading|DCL|event|load|crp|getElementById|document|addEventListener|onload|performance|domComplete|domContentLoadedEventStart|timing|textContent'.split('|'),0,{}))
